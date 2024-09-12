@@ -17,7 +17,8 @@ export function HeroText() {
       {
         text: "Hi, Gabriel Martins",
         duration: 3,
-        opacity: 1
+        opacity: 1,
+        delay: .8
       })
   }, [titleRef])
 
@@ -25,7 +26,8 @@ export function HeroText() {
     gsap.to(labelRef.current, {
       text: "FullStack Developer",
       duration: 2,
-      opacity: 1
+      opacity: 1,
+      delay: .8
     })
   }, [labelRef])
 
@@ -33,6 +35,7 @@ export function HeroText() {
     gsap.to(describeRef.current, {
       duration: 1,
       text: "I'm working as a FullStack Developer since 2021, and I'm always looking to improve my skills.",
+      delay: .8
     })
   }, [describeRef])
 

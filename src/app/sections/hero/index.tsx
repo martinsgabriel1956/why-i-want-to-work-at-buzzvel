@@ -1,8 +1,8 @@
+'use client';
+
 import { LinkedInLogoIcon, GitHubLogoIcon, EnvelopeClosedIcon } from '@radix-ui/react-icons';
-import { SocialLink } from "./components/social-links";
-import { Header } from "./components/header";
-import { AvatarCircle } from './components/avatar-circle';
-import { HeroText } from './components/hero-text';
+import { useHeroController } from './controller/useHeroController';
+import { AvatarCircle, Header, HeroText, SocialLink } from './components';
 
 export const SOCIAL_LINKS = [
   {
@@ -23,8 +23,10 @@ export const SOCIAL_LINKS = [
 ]
 
 export function HeroSection() {
+  const { heroRef } = useHeroController();
+
   return (
-    <section id="home" className="bg-[#1B2022] w-full h-screen flex flex-col items-center pb-8">
+    <section ref={heroRef} id="home" className="overflow-x-hidden w-full h-screen flex flex-col items-center pb-8">
       <Header />
       <div className="flex flex-col lg:flex-row w-full items-center lg:justify-between lg:px-16">
         <div className="flex flex-col items-center lg:flex-row gap-8">

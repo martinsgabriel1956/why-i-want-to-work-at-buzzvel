@@ -1,20 +1,12 @@
 'use client';
 
-import { useState } from "react";
 import { HamburgerMenuIcon, } from '@radix-ui/react-icons';
-import { NavLink } from "../link";
+import { NavLink } from "./components/link";
 import { Menu } from "./components/menu";
+import { useHeaderController } from "./controller/useHeaderController";
 
 export function Header() {
-  const [open, setOpen] = useState(false);
-
-  function handleOpenNavMenu() {
-    setOpen(true);
-  }
-
-  function handleCloseNavMenu() {
-    setOpen(false);
-  }
+  const { handleCloseNavMenu, handleOpenNavMenu, open, aboutMeLink, contactLink, homeLink, projectsLink } = useHeaderController();
 
   return (
     <header className="flex justify-between items-center w-full lg:px-16 lg:py-8">
@@ -23,16 +15,16 @@ export function Header() {
       <nav className="hidden md:flex">
         <ul className="flex gap-4">
           <li>
-            <NavLink href="#home">Home</NavLink>
+            <NavLink ref={homeLink} href="#home">Home</NavLink>
           </li>
           <li>
-            <NavLink href="#about-me">About me</NavLink>
+            <NavLink ref={aboutMeLink} href="#about-me">About me</NavLink>
           </li>
           <li>
-            <NavLink href="#projects">Projects</NavLink>
+            <NavLink ref={projectsLink} href="#projects">Projects</NavLink>
           </li>
           <li>
-            <NavLink href="#contact">Contact</NavLink>
+            <NavLink ref={contactLink} href="#contact">Contact</NavLink>
           </li>
         </ul>
       </nav>

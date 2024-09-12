@@ -1,14 +1,16 @@
 import Link, { LinkProps as NextLinkProps } from 'next/link';
-import { ReactNode } from 'react';
+import { LegacyRef, ReactNode } from 'react';
 
 interface LinkProps extends NextLinkProps {
   children: ReactNode
+  ref?: LegacyRef<HTMLAnchorElement> | undefined
 };
 
-export function NavLink({ children, ...rest }: LinkProps) {
+export function NavLink({ children, ref, ...rest }: LinkProps) {
   return (
     <Link
       {...rest}
+      ref={ref}
     >
       {children}
     </Link>
