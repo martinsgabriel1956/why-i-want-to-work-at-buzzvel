@@ -1,5 +1,13 @@
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { HeroSection } from "./sections/hero";
+
+gsap.registerPlugin(useGSAP);
+
 export default function Home() {
   return (
-    <h1>Hello World</h1>
+    <main>
+      <HeroSection />
+    </main>
   );
 }
