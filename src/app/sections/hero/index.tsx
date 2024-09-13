@@ -2,7 +2,7 @@
 
 import { LinkedInLogoIcon, GitHubLogoIcon, EnvelopeClosedIcon } from '@radix-ui/react-icons';
 import { useHeroController } from './controller/useHeroController';
-import { AvatarCircle, Header, HeroText, SocialLink } from './components';
+import { AvatarCircle, HeroText, SocialLink } from './components';
 
 export const SOCIAL_LINKS = [
   {
@@ -26,8 +26,7 @@ export function HeroSection() {
   const { heroRef } = useHeroController();
 
   return (
-    <section ref={heroRef} id="home" className="overflow-x-hidden w-full h-screen flex flex-col items-center pb-8">
-      <Header />
+    <section ref={heroRef} id="home" className="overflow-x-hidden w-full h-screen flex flex-col items-center pb-8 lg:py-36">
       <div className="flex flex-col lg:flex-row w-full items-center lg:justify-between lg:px-16">
         <div className="flex flex-col items-center lg:flex-row gap-8">
           <AvatarCircle />

@@ -9,7 +9,7 @@ export function Header() {
   const { handleCloseNavMenu, handleOpenNavMenu, open, aboutMeLink, contactLink, homeLink, projectsLink } = useHeaderController();
 
   return (
-    <header className="flex justify-between items-center w-full lg:px-16 lg:py-8">
+    <header className="flex justify-between items-center w-full lg:py-8 lg:px-16 ">
       <h1 className="max-md:sr-only">Gabriel Martins</h1>
 
       <nav className="hidden md:flex">
